@@ -13,3 +13,5 @@ BurgerSolution/public/assets/images/hexi.psd
 BurgerSolution/public/assets/js/script.js
 BurgerSolution/views/index.handlebars
 BurgerSolution/views/layouts/main.handlebars
+.DS_Store
+node_modules

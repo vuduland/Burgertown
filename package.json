@@ -1,0 +1,25 @@
+{
+  "name": "12-Node_Express_Handlebars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuduland/12-Node_Express_Handlebars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vuduland/12-Node_Express_Handlebars/issues"
+  },
+  "homepage": "https://github.com/vuduland/12-Node_Express_Handlebars#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.18.1"
+  }
+}
