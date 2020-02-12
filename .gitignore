@@ -1,18 +1,8 @@
-homework_instructions.md
-/BurgurSolution
+
+# dependencies
+/node_modules
+# misc
 .DS_Store
-node_modules
-BurgerSolution/package.json
-BurgerSolution/server.js
-BurgerSolution/config/connection.js
-BurgerSolution/config/orm.js
-BurgerSolution/controllers/burgersController.js
-BurgerSolution/db/schema.sql
-BurgerSolution/db/seeds.sql
-BurgerSolution/models/burger.js
-BurgerSolution/public/assets/css/style.css
-BurgerSolution/public/assets/images/burger.png
-BurgerSolution/public/assets/images/hexi.psd
-BurgerSolution/public/assets/js/script.js
-BurgerSolution/views/index.handlebars
-BurgerSolution/views/layouts/main.handlebars
+.env
+homework_instructions.md
+/bs
