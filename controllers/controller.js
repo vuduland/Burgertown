@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-import { burger } from '../models/burger';
+const burger = require('../models/burger');
 
 router.get('/', (req, res) => {
   res.redirect('/burgers');
@@ -19,4 +19,4 @@ router.post('/burgers/create', (req, res) => {
   });
 });
 
-export const router = router;
+module.exports = router;

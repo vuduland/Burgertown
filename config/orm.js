@@ -1,4 +1,4 @@
-import { connection as db } from './connection';
+const connection = require('./connection');
 const mysql = require('mysql');
 
 // Here is the O.R.M. where you write functions that takes inputs and conditions
@@ -38,7 +38,7 @@ const db = {
   // vals is an array of values that we want to save to cols
   // cols are the columns we want to insert the values into
   create: function(table, cols, vals, cb) {
-    const queryString = 'INSERT INTO ' + table;
+    let queryString = 'INSERT INTO ' + table;
 
     queryString += ' (';
     queryString += cols.toString();
@@ -76,7 +76,7 @@ const db = {
   }
 };
 
-export const db = db;
+module.exports = db;
 
 // example from online, but makes connection inside it
 // class User {

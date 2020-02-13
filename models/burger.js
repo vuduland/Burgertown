@@ -1,18 +1,18 @@
-import { db as orm } from '../config/orm';
+const db = require('../config/orm');
 
 const burger = {
   all: function(cb) {
-    orm.all('burgers', res => {
+    db.all('burgers', res => {
       cb(res);
     });
   },
-  create: function(cb) {
-    orm.create('burgers', ['burger_name', 'devoured'], [name, false], cb);
+  create: function(name, cb) {
+    db.create('burger_db', ['burger_name', 'devoured'], [name, false], cb);
   },
   update: function(id, cb) {
     const condition = `id = ${id}`;
-    orm.update(
-      'burgers',
+    db.update(
+      'burger_db',
       {
         devoured: true
       },
@@ -22,4 +22,4 @@ const burger = {
   }
 };
 
-export const burger = burger;
+module.exports = burger;
