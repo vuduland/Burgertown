@@ -23,12 +23,12 @@ function objToSql(ob) {
 
 const db = {
   all: function(tableInput, cb) {
-    const queryString = 'SELECT * FROM ' + tableInput + ';';
-    connection.query(queryString, function(err, result) {
+    let queryString = `SELECT * FROM ${tableInput} ;`;
+    connection.query(queryString, function(err, res) {
       if (err) {
         throw err;
       }
-      cb(result);
+      cb(res);
     });
   },
   // vals is an array of values that we want to save to cols
@@ -40,69 +40,29 @@ const db = {
       vals.length
     )})`;
 
-    // queryString += ` (${cols.toString()}) VALUES (${printQuestionMarks(
-    //   vals.length
-    // )})`;
-    // queryString += ' (';
-    // queryString += cols.toString();
-    // queryString += ') ';
-    // queryString += 'VALUES (';
-    // queryString += printQuestionMarks(vals.length);
-    // queryString += ') ';
-
     console.log(queryString);
 
     connection.query(queryString, vals, function(err, res) {
       if (err) {
-        console.log(err);
-        return;
+        throw err;
       }
       cb(res);
     });
   },
-  // objColVals would be the columns and values that you want to update
-  // an example of objColVals would be {name: panther, sleepy: true}
+
   update: function(table, objColVals, condition, cb) {
     let queryString = `UPDATE ${table} SET ${objToSql(
       objColVals
     )} WHERE ${condition}`;
 
-    // queryString += ' SET ';
-    // queryString += objToSql(objColVals);
-    // queryString += ' WHERE ';
-    // queryString += condition;
-
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, function(err, res) {
       if (err) {
-        console.log(err);
-        return;
+        throw err;
       }
-      cb(result);
+      cb(res);
     });
   }
 };
 
 module.exports = db;
-
-// example from online, but makes connection inside it
-// class User {
-//   static CreateTable() {
-//     const sql = `
-//       CREATE TABLE IF NOT EXISTS users (
-//         id INTEGER PRIMARY KEY,
-//         name TEXT,
-//         age INTEGER
-//       )
-//     `;
-
-//     console.log('Preparing to create the users table...');
-
-//     return new Promise(function(resolve) {
-//       db.run(sql, function() {
-//         console.log('...users table created!');
-//         resolve('Success');
-//       });
-//     });
-//   }
-// }
