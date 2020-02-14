@@ -2,7 +2,7 @@ const db = require('../config/orm');
 
 const burger = {
   all: function(cb) {
-    db.all('burgers', res => {
+    db.all('burger_db', function(res) {
       cb(res);
     });
   },

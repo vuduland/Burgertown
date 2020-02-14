@@ -6,14 +6,14 @@ router.get('/', (req, res) => {
   res.redirect('/burgers');
 });
 
-router.get('/burgers', (req, res) => {
+router.get('/burgers/:id?', function(req, res) {
   burger.all(data => {
     res.render('index', { burger_data: data });
   });
 });
 
-router.post('/burgers/create', (req, res) => {
-  burger.create(req.body.burger_name, result => {
+router.post('/burgers/create', function(req, res) {
+  burger.create(req.body.burger_name, function() {
     console.log(result);
     res.sendStatus(200);
   });

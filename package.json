@@ -17,6 +17,7 @@
     "url": "https://github.com/vuduland/12-Node_Express_Handlebars/issues"
   },
   "dependencies": {
+    "ajax": "0.0.4",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-router": "^0.0.1",
