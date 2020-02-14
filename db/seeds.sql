@@ -1,7 +1,7 @@
-INSERT INTO burgers (burger_name, devoured)
+INSERT INTO burger_db (burger_name, devoured)
   VALUES
     ('Big Boy Burger', FALSE),
-    ("Fatty's Favorite", FALSE),
+    ("Big Goodbye Birger", FALSE),
     ('Bean Burger', FALSE),
-    ('Hawaiian Burger', FALSE),
-    ('Big Blue Burger', FALSE)
+    ('H. Bomb Burger', FALSE),
+    ('What Happened Last Night? Burger', FALSE)
