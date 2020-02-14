@@ -34,9 +34,11 @@ const db = {
   // vals is an array of values that we want to save to cols
   // cols are the columns we want to insert the values into
   create: function(table, cols, vals, cb) {
-    let queryString = `INSERT INTO ${table} ${cols.toString()} VALUES ${printQuestionMarks(
+    let queryString = `INSERT INTO ${table} `;
+
+    queryString += `(${cols.toString()}) VALUES (${printQuestionMarks(
       vals.length
-    )}`;
+    )})`;
 
     // queryString += ` (${cols.toString()}) VALUES (${printQuestionMarks(
     //   vals.length
@@ -50,13 +52,12 @@ const db = {
 
     console.log(queryString);
 
-    connection.query(queryString, vals, function(err, result) {
+    connection.query(queryString, vals, function(err, res) {
       if (err) {
         console.log(err);
-        res.sendStatus(500);
         return;
       }
-      cb(result);
+      cb(res);
     });
   },
   // objColVals would be the columns and values that you want to update
@@ -75,7 +76,6 @@ const db = {
     connection.query(queryString, function(err, result) {
       if (err) {
         console.log(err);
-        res.sendStatus(500);
         return;
       }
       cb(result);
