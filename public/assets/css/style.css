@@ -1,7 +1,26 @@
-body {
+body, html {
   width: 99%;
   height: 900px;
-  background-color: #fc6;
+  background-image: url('../images/sesame.jpg');
+  /* font-family: 'Modak', cursive; */
+  font-family: 'Gloria Hallelujah', cursive;
+  font-weight: 200;
+}
+
+img {
+  color: red;
+}
+
+
+
+.text-center {
+font-family: 'Gloria Hallelujah', cursive;
+}
+
+.jumbotron {
+  background-color: rgb(233, 255, 38);
+  opacity: 0.8;
+  border: 4px dotted red;
 }
 
 #top-bar {
@@ -65,4 +84,13 @@ body {
 
 h1 {
   color: #f30;
+}
+
+pre {
+font-family: 'Gloria Hallelujah', cursive;
+}
+
+input.form-control {
+  margin-left: 50%;
+  margin-right: 50%;
 }
